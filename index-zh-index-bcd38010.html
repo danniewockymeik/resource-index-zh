@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #fdf0e4 0%, #fce2ce 40%, #fbcfb0 100%);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans SC", sans-serif;
+            line-height: 1.7;
+            color: #2c2b2a;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+        .page-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        /* 杂志卡片容器 */
+        .magazine-card {
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 42px 42px 36px 36px;
+            box-shadow: 0 20px 40px -10px rgba(160, 90, 40, 0.18), 0 8px 20px rgba(0,0,0,0.03);
+            padding: 2.5rem 2.8rem 2.8rem;
+            transition: box-shadow 0.2s ease;
+        }
+        @media (max-width: 520px) {
+            body { padding: 1rem 0.6rem; }
+            .magazine-card { padding: 1.8rem 1.2rem 2rem; border-radius: 32px; }
+        }
+
+        /* 横幅区 hero */
+        .hero-badge {
+            display: inline-block;
+            background: #eecbad;
+            color: #4d3324;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            margin-bottom: 0.8rem;
+            border: 1px solid #dfb894;
+        }
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #2d1f13;
+            margin: 0.15rem 0 0.25rem 0;
+            line-height: 1.2;
+        }
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #5d4938;
+            max-width: 600px;
+            margin-bottom: 0.2rem;
+            border-left: 3px solid #dbaa7a;
+            padding-left: 0.9rem;
+        }
+        .hero-extra {
+            margin-top: 0.1rem;
+            font-size: 0.95rem;
+            color: #6e5a47;
+            background: #f4e5d9;
+            display: inline-block;
+            padding: 0.2rem 1.2rem 0.2rem 1rem;
+            border-radius: 30px;
+        }
+
+        /* 分割与段落 */
+        .section-spacer {
+            height: 0.1rem;
+            background: linear-gradient(90deg, transparent, #dbb99b, transparent);
+            margin: 2rem 0 1.8rem;
+            opacity: 0.5;
+        }
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1rem;
+            color: #302b26;
+        }
+        p:last-of-type {
+            margin-bottom: 0.2rem;
+        }
+        .intro-highlight {
+            background: #fbf1e9;
+            padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+            border-radius: 30px 12px 30px 12px;
+            margin: 1.6rem 0 1.2rem;
+            font-style: normal;
+            border: 1px dashed #d9b594;
+        }
+
+        /* 链接风格 — 圆角按钮感，但不包含“进入/点击”等 */
+        a {
+            text-decoration: none;
+            color: #2d1f13;
+            background: #f2ddcb;
+            padding: 0.1rem 0.8rem 0.15rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background 0.2s, box-shadow 0.15s;
+            box-shadow: 0 2px 6px rgba(140, 80, 35, 0.08);
+            border: 1px solid #e4c9b4;
+            display: inline-block;
+            line-height: 1.6;
+        }
+        a:hover {
+            background: #e5cbb6;
+            box-shadow: 0 4px 10px rgba(150, 85, 30, 0.15);
+            border-color: #cba685;
+        }
+        a:active {
+            background: #d9b99b;
+            transform: scale(0.97);
+        }
+
+        /* 特色小标签 */
+        .feature-tag {
+            display: inline-block;
+            background: #f9ede3;
+            border-radius: 40px;
+            padding: 0.1rem 0.8rem;
+            font-size: 0.8rem;
+            color: #4a3424;
+            margin-right: 0.5rem;
+            border: 1px solid #e1c1a8;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            margin-top: 2.6rem;
+            padding-top: 1.2rem;
+            border-top: 2px dotted #dbb694;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5a4839;
+        }
+        .faq-mini {
+            background: #f6e7db;
+            border-radius: 24px;
+            padding: 0.9rem 1.2rem;
+            margin: 1.8rem 0 1rem;
+            font-size: 0.95rem;
+        }
+        .faq-mini strong {
+            color: #2d1f13;
+        }
+        .footer-note span {
+            opacity: 0.7;
+        }
+        @media (max-width: 520px) {
+            h1 { font-size: 2rem; }
+            .footer-note { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <div class="magazine-card">
+
+        <!-- 首页横幅 -->
+        <div class="hero-badge">✦ 游戏生活志 · 稳定入口</div>
+        <h1>爱游戏</h1>
+        <div class="hero-sub">翻看属于你的游戏札记，每次打开都自然顺手</div>
+        <div class="hero-extra">⚡ 轻量入口 · 常伴日常</div>
+
+        <!-- 背景说明：从稳定入口展开 -->
+        <div class="section-spacer"></div>
+        <p>
+            许多朋友在找游戏资讯时，总希望有一个不绕路、不反复跳转的起点。<br>
+            我们注意到，一个简洁但保留温度的页面，反而能让人待得更久。<strong>爱游戏</strong>这个站点，就是希望扮演这样一个角色——它不刻板，也不花哨，像是桌边那本翻了半卷的杂志，随时可以拾起来读两页。
+        </p>
+
+        <!-- 三段自然介绍 + 融入链接 -->
+        <div class="intro-highlight">
+            <p style="margin-bottom: 0.6rem;">
+                🖋️ <strong>关于稳定入口</strong><br>
+                所谓“稳定”，不只是链接不失效，更是内容的调性始终如一。在<a href="https://index-zh-i-game.com.cn">爱游戏</a>里，你找不到夸张的弹窗或浮躁的标语，只有一群同好围绕游戏本身的闲聊、推荐与记录。页面设计偏向纸质杂志的呼吸感，图片与文字的比例刚好，读起来不累。
+            </p>
+        </div>
+
+        <p>
+            🎮 从场景说起——下班后、通勤路上、周末的午后，想翻一翻最近有什么值得一试的作品，或者看看老游戏的新玩法。这时候需要的不是什么“平台”，而是一个舒服的页面。爱游戏把分类做得很轻，不强迫你注册，也不塞满广告。你只要记住这个地址，随时可以打开，就像打开一本放在茶几上的读本。
+        </p>
+
+        <p>
+            📘 除了游戏介绍，偶尔还会有制作组访谈、像素美术赏析、以及一些“老玩家才知道”的冷门技巧。内容更新的节奏不算快，但每篇都经过筛选。如果你也厌倦了信息流里的同质化推荐，或许可以试试把<a href="https://index-zh-i-game.com.cn">爱游戏</a>加入书签，当一个安静的参考角落。不需要每次都被“最新”绑架，偶尔回看经典反而更有滋味。
+        </p>
+
+        <!-- FAQ 摘要 — 带一点杂志问答感 -->
+        <div class="faq-mini">
+            <strong>📌 杂志侧记 · 几个常见问题</strong><br>
+            <span style="display: block; margin-top: 0.2rem;">
+                <span class="feature-tag">Q</span> 页面会频繁变动吗？ —— 首页结构保持季度微调，但核心入口与版式风格长期稳定。<br>
+                <span class="feature-tag">Q</span> 适合哪类玩家？ —— 喜欢慢浏览、关注游戏文化而非单纯速通攻略的朋友。<br>
+                <span class="feature-tag">Q</span> 有移动版吗？ —— 页面自适应，手机、平板、桌面都能获得接近杂志的阅读感。
+            </span>
+        </div>
+
+        <!-- 第二段自然介绍：更多细节特点 -->
+        <p>
+            相比很多游戏站点把“攻略”“礼包”放在最前面，爱游戏更愿意把编辑推荐和玩家随笔放在显眼位置。你可能会发现一篇关于《星露谷物语》种田心得的千字杂谈，也可能会看到 retro 硬件 DIY 的图片记录。这些内容不一定“新”，但都有温度。我们觉得游戏不止是打怪升级，也是生活里一段段可重复回味的小旅程。而<a href="https://index-zh-i-game.com.cn">爱游戏</a>，正是为这些旅程提供一个不打烊的索引架。
+        </p>
+
+        <!-- 第三段自然介绍：页尾前的小收束 -->
+        <p>
+            最后想说，无论你是刚接触主机游戏的新手，还是从红白机时代走来的老玩家，这里都留了一个位置。内容不会刻意讨好算法，只希望让每次点开都觉得安心。如果你喜欢这种不紧不慢的节奏，不妨把这个页面当作一个据点。
+        </p>
+
+        <!-- 页尾访问提示 -->
+        <div class="footer-note">
+            <span>📬 爱游戏 · 杂志专题 · 第「2ebc」期</span>
+            <span style="font-size: 0.85rem; background: #efdaca; padding: 0.2rem 1rem; border-radius: 30px;">直接使用书签，随时翻阅</span>
+        </div>
+
+        <!-- 最底部安静提示（非链接文本） -->
+        <div style="margin-top: 0.8rem; text-align: right; font-size: 0.75rem; color: #8f7b6a; letter-spacing: 0.3px;">
+            —— 页面的入口，亦是日常的入口。
+        </div>
+    </div>
+</div>
+</body>
+</html>
