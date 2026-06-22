@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问鼎娱乐 · 再次遇见</title>
+    <style>
+        /* 全局重置与极简留白 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f8f6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #2d2a26;
+            line-height: 1.7;
+        }
+
+        .page {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 5rem;
+        }
+
+        /* 导航 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e6e0d8;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 450;
+            letter-spacing: 0.02em;
+            color: #2d2a26;
+        }
+
+        .logo a {
+            color: #2d2a26;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .logo a:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6b645b;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2d2a26;
+        }
+
+        /* 主标题区域 */
+        .hero {
+            margin: 3rem 0 2.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 350;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+            color: #1f1c19;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero p {
+            font-size: 1.08rem;
+            color: #5b554e;
+            max-width: 560px;
+        }
+
+        /* 段落与层级 */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 2.8rem 0 1rem;
+            color: #1f1c19;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 450;
+            margin: 0 0 0.5rem;
+            color: #2d2a26;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3d3731;
+        }
+
+        a {
+            color: #3d3731;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #c6beb4;
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover {
+            text-decoration-color: #2d2a26;
+        }
+
+        /* 场景卡片 */
+        .scenes {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.6rem 1.8rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.02);
+            border: 1px solid #efebe6;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .scene-card:hover {
+            border-color: #d9d0c6;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .scene-card p {
+            margin-bottom: 0.2rem;
+            font-size: 0.96rem;
+            color: #4d453e;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.78rem;
+            color: #8f857b;
+            letter-spacing: 0.02em;
+        }
+
+        /* 说明 / FAQ 摘要 */
+        .faq-section {
+            margin-top: 2.8rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e6e0d8;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #2a2622;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            font-size: 0.96rem;
+            color: #4d453e;
+        }
+
+        .footnote {
+            margin-top: 3.5rem;
+            font-size: 0.85rem;
+            color: #9c948b;
+            border-top: 1px solid #e6e0d8;
+            padding-top: 2rem;
+            text-align: left;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            .page {
+                padding: 2rem 1.2rem 4rem;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+            .scene-card {
+                padding: 1.3rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <nav>
+            <div class="logo"><a href="https://main-web-wending.com">问鼎娱乐</a></div>
+            <ul class="nav-links">
+                <li><a href="#">随记</a></li>
+                <li><a href="#">场景</a></li>
+                <li><a href="#">常见</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero">
+            <h1>再次遇见，如同旧友</h1>
+            <p>有些去处，不常提起，却总在需要时自然浮现。<br>收藏一处习惯的角落，或许比寻找新地方更让人安心。</p>
+        </div>
+
+        <h2>收藏，是为了随时能回</h2>
+        <p>在书签栏、笔记页或聊天记录里，偶尔会看到熟悉的地址。它一直在那里，没有消失，也没有喧哗。如果你曾经停留过，或许还记得那种松弛的节奏——<a href="https://main-web-wending.com">问鼎娱乐</a>就是这样一个地方，不需要刻意想起，但总愿意再次打开。</p>
+
+        <h2>三种熟悉的日常场景</h2>
+        <div class="scenes">
+            <div class="scene-card">
+                <h3>午后空白时段</h3>
+                <p>没有要紧事，也没有困意。想找一个不赶时间、不堆信息的地方，随便看看，让注意力自然流动。</p>
+                <span class="tag">· 漫无目的 ·</span>
+            </div>
+            <div class="scene-card">
+                <h3>等待时的短暂片刻</h3>
+                <p>咖啡还没好，页面加载中，或者地铁恰好还有三站。这种空隙适合一个不太重的内容入口。</p>
+                <span class="tag">· 轻巧停留 ·</span>
+            </div>
+            <div class="scene-card">
+                <h3>深夜的安静回访</h3>
+                <p>一天的忙碌结束，屏幕光线调暗，没有社交压力。打开收藏夹里那个名字，像是回到一间认识很久的屋子。</p>
+                <span class="tag">· 熟悉节奏 ·</span>
+            </div>
+        </div>
+
+        <h2>一些被问过的事</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <strong>是否需要每次重新搜索？</strong>
+                <p>如果你把 <a href="https://main-web-wending.com">问鼎娱乐</a> 加入浏览器书签或手机主屏幕，之后就能直接进入。不必每次从头找起。</p>
+            </div>
+            <div class="faq-item">
+                <strong>内容会频繁变化吗？</strong>
+                <p>节奏比较慢。没有铺天盖地的更新提醒，适合不喜吵闹的人偶尔回来看一看。</p>
+            </div>
+            <div class="faq-item">
+                <strong>收藏后怎么找到？</strong>
+                <p>在浏览器的书签栏里添加一个文件夹，或者用笔记工具保存链接。方法有很多，选一种最顺手的方式就好。</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 2rem;">说到底，一个常去的地方不需要太多理由。只是因为熟悉、安静，以及知道自己还会回来。</p>
+
+        <div class="footnote">
+            如果你还记得，那就好。欢迎再次来 <a href="https://main-web-wending.com">问鼎娱乐</a> 看看。
+        </div>
+    </div>
+</body>
+</html>
