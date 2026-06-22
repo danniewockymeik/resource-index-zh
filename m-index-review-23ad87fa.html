@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>问鼎娱乐 · 信息索引专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f3ed;
+      font-family: "Georgia", "Noto Serif SC", "Times New Roman", serif;
+      color: #2c2c2c;
+      line-height: 1.65;
+      padding: 2.5rem 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* 杂志式横幅 */
+    .hero-banner {
+      background: #e8dfd3;
+      padding: 2.8rem 2.5rem;
+      margin-bottom: 2.8rem;
+      border-left: 6px solid #9b8b78;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .hero-banner h1 {
+      font-size: 2.4rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 0.4rem;
+      color: #3a332c;
+    }
+
+    .hero-banner .subhead {
+      font-size: 1rem;
+      font-style: italic;
+      color: #6a5e51;
+      border-top: 1px solid #c6b9aa;
+      padding-top: 0.7rem;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+
+    /* 背景说明 */
+    .context-block {
+      background: #fcf9f6;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2.5rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #b7a897;
+      font-size: 0.98rem;
+    }
+
+    .context-block strong {
+      color: #4f4237;
+    }
+
+    /* 三段自然介绍 —— 卡片化，文章排版 */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .card {
+      flex: 1 1 240px;
+      background: #ffffff;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      border-top: 3px solid #d7cdc0;
+    }
+
+    .card .card-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #8b7b6a;
+      margin-bottom: 0.5rem;
+      font-family: "Arial", sans-serif;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      color: #3a332c;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #3e3a36;
+      margin-bottom: 1rem;
+    }
+
+    .card .inset-quote {
+      background: #f4efe8;
+      padding: 0.6rem 1rem;
+      border-left: 3px solid #b7a38e;
+      font-size: 0.88rem;
+      color: #4d423a;
+      margin-top: 0.3rem;
+    }
+
+    /* 提示框 / 引用块 */
+    .info-callout {
+      background: #efe9e0;
+      padding: 1.6rem 2rem;
+      margin: 2.5rem 0;
+      border-radius: 0 20px 0 20px;
+      font-size: 0.95rem;
+    }
+
+    .info-callout .callout-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      color: #6d5e4e;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    /* FAQ 摘要区 */
+    .faq-compact {
+      background: #fcfaf7;
+      padding: 1.8rem 2rem;
+      margin: 2rem 0 2.5rem 0;
+      border: 1px solid #e2d8ce;
+    }
+
+    .faq-compact h4 {
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px dashed #d3c8bc;
+      padding-bottom: 0.4rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .faq-item .q {
+      font-weight: 500;
+      color: #4c3f34;
+    }
+
+    .faq-item .a {
+      color: #5f5245;
+      padding-left: 1.2rem;
+      border-left: 2px solid #ddd1c3;
+      margin-top: 0.2rem;
+      font-size: 0.93rem;
+    }
+
+    /* 页尾访问提示 */
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #d9cec1;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #3e3730;
+    }
+
+    .footer-note a {
+      color: #3e332a;
+      text-decoration: none;
+      border-bottom: 1px dotted #9b8b78;
+      transition: border 0.2s;
+    }
+
+    .footer-note a:hover {
+      border-bottom: 2px solid #7a6958;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+
+      .hero-banner {
+        padding: 1.8rem 1.2rem;
+      }
+
+      .hero-banner h1 {
+        font-size: 1.8rem;
+      }
+
+      .card-grid {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .card {
+        flex: 1 1 auto;
+      }
+
+      .info-callout {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 杂志式首页横幅 -->
+  <div class="hero-banner">
+    <h1>问鼎娱乐 · 信息索引</h1>
+    <div class="subhead">资料整理 &amp; 结构导航 · 专题笔记</div>
+  </div>
+
+  <!-- 背景说明：从资料整理角度 -->
+  <div class="context-block">
+    <strong>背景 · 材料梳理</strong><br>
+    本页面向对娱乐资讯及内容索引有需求的读者，以<strong>资料档案</strong>方式梳理平台概貌。涉及的公开信息均来自可溯源渠道，仅作结构性呈现，不构成任何形式的商业或使用推荐。<br>
+    以下内容围绕 <strong>问鼎娱乐</strong> 这一品牌在内容聚合、信息架构及用户场景方面的基础资料展开，力求客观、简洁。
+  </div>
+
+  <!-- 三段自然介绍 -->
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-label">▸ 索引维度</div>
+      <h3>内容汇编方式</h3>
+      <p>参考公开资料将平台内信息分为若干类别，包括娱乐资讯、专题归档与功能性指引。每一类均按时间与主题交叉标记，便于快速定位。整编过程中保留原始语境，仅作结构分层。</p>
+      <div class="inset-quote">“信息密度适当，不做过度演绎” —— 整理笔记</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">▸ 功能场景</div>
+      <h3>使用情境参考</h3>
+      <p>从资料整理角度看，该平台常见使用场景包括：内容浏览、资料回溯及主题跟踪。用户可通过分类标签或关键词入口进入不同信息模块。以下为典型情境摘要：</p>
+      <div class="inset-quote">情境示例：浏览近期更新 → 按主题筛选 → 标记感兴趣条目</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">▸ 结构要点</div>
+      <h3>信息组织特征</h3>
+      <p>整体采用层级目录+即时索引的双轨结构，一级类目下细分二级标签，同时支持模糊匹配。根据现有文档，分类深度不超过三级，保持了较高的可导航性。此结构适合中等信息量的日常使用。</p>
+      <div class="inset-quote">深度控制：避免信息过载，同时保留扩展空间</div>
+    </div>
+  </div>
+
+  <!-- 提示框 / 引用块（信息整理角度） -->
+  <div class="info-callout">
+    <div class="callout-title">◈ 整理提示</div>
+    在归档与索引过程中，建议使用者先明确自己的信息需求层级：是随机浏览、主题跟踪还是定向查找。<strong>不同的使用习惯对应不同的入口偏好</strong>。例如习惯线性阅读的用户可优先使用分类列表，而习惯搜索的用户可直接利用关键词入口。保持索引方式的灵活性可以提升信息获取效率。
+  </div>
+
+  <!-- FAQ 摘要（从资料索引常见问题切入） -->
+  <div class="faq-compact">
+    <h4>资料索引 FAQ 摘要</h4>
+    <div class="faq-item">
+      <div class="q">Q: 如何快速了解信息分类框架？</div>
+      <div class="a">可参考首页主导航或侧边栏索引图，通常一级类目已覆盖主要方向。若有更细致的查找需求，可进入对应二级分类。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Q: 信息更新频率如何？</div>
+      <div class="a">根据公开资料，内容模块采用不定期更新，部分专题按周或月进行增补。具体节奏因类别而异。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Q: 索引标记是否有统一规范？</div>
+      <div class="a">分类标签沿用内部命名规范，以主题词+属性词组合为主，便于跨模块复用。建议在使用过程中留意标签释义。</div>
+    </div>
+  </div>
+
+  <!-- 页尾访问提示（自然句嵌入链接） -->
+  <div class="footer-note">
+    <p>以上资料整理均围绕 <a href="https://m-index-wending.com">问鼎娱乐</a> 的公开信息结构展开。如需查阅原始来源或了解更详细的索引目录，可自行检索相关分类入口。本页仅作信息组织方式示例，不构成任何形式的引导或推荐。</p>
+  </div>
+
+</body>
+</html>
